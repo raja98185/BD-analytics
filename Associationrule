@@ -1,0 +1,25 @@
+#4. To perform Association Rule Mining and Clustering using R. 
+ #Program: Association Rule Mining  
+install.packages("arules") 
+library(arules)  
+transactions <- read.transactions( 
+  textConnection( 
+    "Milk,Bread 
+     Milk,Butter 
+     Bread,Butter 
+     Milk,Bread,Butter 
+     Milk,Bread" 
+  ), 
+  format = "basket", 
+  sep = "," 
+) 
+inspect(transactions) 
+rules <- apriori( 
+  transactions, 
+  parameter = list( 
+    support = 0.4, 
+    confidence = 0.7 
+  ) 
+)  
+inspect(rules) 
+             summary(rules)
