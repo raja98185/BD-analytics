@@ -1,0 +1,22 @@
+#5. To perform data pre-processing operations i) Handling Missing data 
+#ii) Min- Max normalization 
+
+#Program: Handling Missing data 
+x <- c(10, 20, NA, 40, 50, NA, 70) 
+cat("Original Data:\n") 
+print(x) 
+# Find missing values 
+cat("Missing Values:\n") 
+print(is.na(x)) 
+# Replace missing values with mean 
+x[is.na(x)] <- mean(x, na.rm = TRUE) 
+cat("After Replacing Missing Values:\n") 
+print(x)
+
+#(ii)Program: Min- Max normalization 
+data <- c(10, 20, 30, 40, 50) 
+normalized <- (data - min(data)) / (max(data) - min(data)) 
+cat("Original Data:\n") 
+print(data) 
+cat("Normalized Data:\n") 
+print(normalized) 
