@@ -4,11 +4,9 @@
 #Program: Handling Missing data 
 x <- c(10, 20, NA, 40, 50, NA, 70) 
 cat("Original Data:\n") 
-print(x) 
-# Find missing values 
+print(x)  
 cat("Missing Values:\n") 
 print(is.na(x)) 
-# Replace missing values with mean 
 x[is.na(x)] <- mean(x, na.rm = TRUE) 
 cat("After Replacing Missing Values:\n") 
 print(x)
